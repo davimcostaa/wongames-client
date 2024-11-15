@@ -41,7 +41,7 @@ describe('<Banner />', () => {
       />,
     );
 
-    const ribbon = screen.getByText(/Best Seller/i);
+    const ribbon = screen.getByText(/My ribbon/i);
     expect(ribbon).toBeInTheDocument();
     expect(ribbon).toHaveStyle({ backgroundColor: '#3CD3C1' });
     expect(ribbon).toHaveStyle({
