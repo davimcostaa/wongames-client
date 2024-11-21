@@ -40,7 +40,7 @@ export const Wrapper = styled.button<WrapperProps>`
     align-items: center;
     justify-content: center;
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
-    color: ${theme.colors.white};
+    color: ${theme.colors?.white};
     border: 0;
     cursor: pointer;
     border-radius: ${theme.border.radius};
