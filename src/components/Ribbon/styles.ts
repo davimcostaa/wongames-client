@@ -1,6 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 import { RibbonColors, RibbonProps } from '.';
 import { darken } from 'polished';
+import media from 'styled-media-query';
 
 const wrapperModifiers = {
   color: (theme: DefaultTheme, color: RibbonColors) => css`
@@ -14,12 +15,20 @@ const wrapperModifiers = {
     font-size: ${theme.font.sizes.small};
     padding: 0 ${theme.spacings.small};
     height: 3.6rem;
+    text-align: center;
     right: -2rem;
-    &::before {
+
+    ${media.lessThan('huge')`
+        right: 0;
+    `}
+
+    ${media.greaterThan('huge')`
+          &::before {
       top: 3.6rem;
       border-top-width: 1rem;
       border-right-width: 2rem;
     }
+    `}
   `,
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.xsmall};
