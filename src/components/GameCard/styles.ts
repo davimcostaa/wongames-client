@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.article`
   ${({ theme }) => css`
@@ -123,8 +124,13 @@ export const Price = styled.div<PriceProps>`
     font-weight: ${theme.font.bold};
     height: 3rem;
     align-items: center;
+    font-size: ${theme.font.sizes.xsmall};
+
+    ${media.greaterThan('huge')`
+        font-size: ${theme.font.sizes.medium};
+    `}
 
     ${!isPromotional && priceModifiers.default(theme)}
-    ${isPromotional && priceModifiers.promotional(theme)}
+    ${isPromotional && priceModifiers.promotional(theme)};
   `}
 `;
