@@ -1,4 +1,6 @@
 'use client';
+
+import Link from 'next/link';
 import { useState } from 'react';
 import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2';
 import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outlined/ShoppingCart';
@@ -44,7 +46,7 @@ const Menu = ({ username }: MenuProps) => {
         </S.IconWrapper>
         {!username && (
           <MediaMatch $greaterThan="medium">
-            {!username && <Button>Sign in</Button>}
+            <Link href="/sign-in">{!username && <Button>Sign in</Button>}</Link>
           </MediaMatch>
         )}
       </S.MenuGroup>

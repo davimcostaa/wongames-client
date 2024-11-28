@@ -11,7 +11,7 @@ export type GameCardSliderProps = {
 };
 
 const settings: SliderSettings = {
-  slidesToShow: 4,
+  slidesToShow: 3,
   infinite: false,
   lazyLoad: 'ondemand',
   responsive: [
