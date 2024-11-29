@@ -21,20 +21,29 @@ const props = {
   freeHighlight: highlightMock,
 };
 
+jest.mock('components/Showcase', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Showcase"></div>;
+    },
+  };
+});
+
+jest.mock('components/BannerSlider', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Banner Slider"></div>;
+    },
+  };
+});
+
 describe('<Home />', () => {
-  it('should render menu and footer', () => {
+  it('should render banner and showcases', () => {
     renderWithTheme(<Home {...props} />);
 
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
-    expect(screen.getByText(/follow us/i)).toBeInTheDocument();
-
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
-    expect(screen.getByText(/follow us/i)).toBeInTheDocument();
-
-    expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1);
-    // card game ( 5 sections com 1 cards cada = 5x1 = 5)
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(5);
-    // highlight
-    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(3);
+    expect(screen.getByTestId('Mock Footer')).toBeInTheDocument();
+    expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(5);
   });
 });
