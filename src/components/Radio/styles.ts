@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components';
 import { RadioProps } from '.';
+
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
 `;
+
 export const Input = styled.input`
   ${({ theme }) => css`
     display: flex;
@@ -18,9 +20,11 @@ export const Input = styled.input`
     transition: background ${theme.transition.fast};
     outline: none;
     cursor: pointer;
+
     &:focus {
       box-shadow: 0 0 0.5rem ${theme.colors.primary};
     }
+
     &:before {
       content: '';
       width: 0.8rem;
@@ -31,6 +35,7 @@ export const Input = styled.input`
       opacity: 0;
       position: absolute;
     }
+
     &:checked {
       &:before {
         opacity: 1;
@@ -38,6 +43,7 @@ export const Input = styled.input`
     }
   `}
 `;
+
 export const Label = styled.label<Pick<RadioProps, 'labelColor'>>`
   ${({ theme, labelColor }) => css`
     padding-left: ${theme.spacings.xxsmall};

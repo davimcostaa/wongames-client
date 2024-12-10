@@ -25,7 +25,7 @@ export const wrapperModifiers = {
 
   lineBottom: (theme: DefaultTheme, lineColor: LineColors) => css`
     position: relative;
-    margin-bottom: ${theme.spacings.medium};
+    margin-bottom: ${theme.spacings.small};
 
     &:after {
       content: '';

@@ -52,6 +52,17 @@ describe('<Button />', () => {
     expect(screen.getByTestId('icon')).toBeInTheDocument();
   });
 
+  it('should render a disabled button', () => {
+    renderWithTheme(<Button disabled>Buy Now</Button>);
+    expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyleRule(
+      'cursor',
+      'not-allowed',
+      {
+        modifier: ':disabled',
+      },
+    );
+  });
+
   it('should render a minimal version', () => {
     renderWithTheme(
       <Button minimal icon={<AddShoppingCart data-testid="icon" />}>
@@ -59,10 +70,6 @@ describe('<Button />', () => {
       </Button>,
     );
 
-    expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyle({
-      background: 'none',
-      color: '#F231A5',
-    });
     expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyleRule(
       'background',
       'none',

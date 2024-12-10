@@ -1,8 +1,10 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithTheme } from 'utils/tests/helpers';
-import theme from 'styles/theme';
+import { renderWithTheme } from '@/utils/tests/helpers';
+
 import Radio from '.';
+import theme from '@/styles/theme';
+
 describe('<Radio />', () => {
   it('should render with label (white)', () => {
     const { container } = renderWithTheme(

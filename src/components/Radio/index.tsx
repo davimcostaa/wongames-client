@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from 'react';
+
 import * as S from './styles';
 
 type RadioValue = string | ReadonlyArray<string> | number;
@@ -22,6 +23,7 @@ const Radio = ({
   const onChange = () => {
     !!onCheck && onCheck(value);
   };
+
   return (
     <S.Wrapper>
       <S.Input
@@ -39,4 +41,5 @@ const Radio = ({
     </S.Wrapper>
   );
 };
+
 export default Radio;
