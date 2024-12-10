@@ -43,19 +43,22 @@ type MenuFullProps = {
 export const MenuNav = styled.div`
   ${({ theme }) => css`
     ${media.greaterThan('medium')`
+    display: flex;
     margin-left: ${theme.spacings.small}
   `}
   `}
 `;
 
-export const MenuLink = styled.a`
+export const MenuLink = styled.h4`
   ${({ theme }) => css`
+    font-weight: normal;
     position: relative;
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.medium};
     margin: 0.3rem ${theme.spacings.small} 0;
     text-decoration: none;
     text-align: center;
+
     &:hover {
       &::after {
         content: '';
