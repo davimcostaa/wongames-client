@@ -1,13 +1,13 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithTheme } from 'utils/tests/helpers';
+import { renderWithTheme } from '@/utils/tests/helpers';
 import TextField from '.';
 
 import { Email } from '@styled-icons/material-outlined/Email';
 
 describe('<TextField />', () => {
   it('Renders with Label', () => {
-    renderWithTheme(<TextField label="Label" labelFor="Field" id="Field" />);
+    renderWithTheme(<TextField label="Label" name="Label" />);
     expect(screen.getByLabelText('Label')).toBeInTheDocument();
   });
 
@@ -27,8 +27,7 @@ describe('<TextField />', () => {
       <TextField
         onInput={onInput}
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
         disabled
       />,
     );
@@ -45,12 +44,7 @@ describe('<TextField />', () => {
   it('Changes its value when typing', async () => {
     const onInput = jest.fn();
     renderWithTheme(
-      <TextField
-        onInput={onInput}
-        label="TextField"
-        labelFor="TextField"
-        id="TextField"
-      />,
+      <TextField onInput={onInput} label="TextField" name="TextField" />,
     );
 
     const input = screen.getByRole('textbox');
@@ -68,7 +62,7 @@ describe('<TextField />', () => {
       <TextField
         icon={<Email data-testid="icon" />}
         label="TextField"
-        labelFor="TextField"
+        name="TextField"
         error="Error message"
       />,
     );
@@ -95,8 +89,7 @@ describe('<TextField />', () => {
       <TextField
         icon={<Email data-testid="icon" />}
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
       />,
     );
 
@@ -108,8 +101,7 @@ describe('<TextField />', () => {
       <TextField
         icon={<Email data-testid="icon" />}
         label="TextField"
-        labelFor="TextField"
-        id="TextField"
+        name="TextField"
       />,
     );
 

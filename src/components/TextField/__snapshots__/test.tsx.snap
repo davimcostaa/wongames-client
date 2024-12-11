@@ -94,6 +94,8 @@ exports[`<TextField /> Renders with error 1`] = `
     </svg>
     <input
       class="c6"
+      id="TextField"
+      name="TextField"
       type="text"
       value=""
     />
